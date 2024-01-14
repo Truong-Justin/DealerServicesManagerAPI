@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerServicesManagerAPI", "DealerServicesManagerAPI\DealerServicesManagerAPI.csproj", "{5FEE7640-27A7-4605-BF10-760346974D26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FEE7640-27A7-4605-BF10-760346974D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FEE7640-27A7-4605-BF10-760346974D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FEE7640-27A7-4605-BF10-760346974D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FEE7640-27A7-4605-BF10-760346974D26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F879F2C3-5D5B-4BD3-B3ED-A8016C80708F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+﻿@DealerServicesManagerAPI_HostAddress = http://localhost:5081
+
+GET {{DealerServicesManagerAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
