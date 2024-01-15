@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DealerServicesManagerAPI.Controllers
 {
-    [Route("api/Controller/Dealership")]
+    [Route("api/Dealership")]
     [ApiController]
     public class DealershipController : ControllerBase
     {
@@ -41,7 +41,6 @@ namespace DealerServicesManagerAPI.Controllers
             }
 
             return Ok(dealership);
-
         }
 
         [HttpPost]
@@ -60,6 +59,7 @@ namespace DealerServicesManagerAPI.Controllers
             });
 
             await _context.SaveChangesAsync();
+
             return Ok("A new dealership has been added.");
         }
 
@@ -67,7 +67,7 @@ namespace DealerServicesManagerAPI.Controllers
         [Route("UpdateDealership")]
         public async Task<ActionResult> UpdateDealership(int dealershipId, string name, string address, string zip, string state, string city, string phone, string email)
         {
-            Dealership dealer = _context.Dealerships.Where(d => d.DealerId == dealershipId).FirstOrDefault<Dealership>();
+            Dealership dealer = await _context.Dealerships.Where(d => d.DealerId == dealershipId).FirstOrDefaultAsync<Dealership>();
 
             if (dealer != null)
             {
