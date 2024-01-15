@@ -65,9 +65,9 @@ namespace DealerServicesManagerAPI.Controllers
 
         [HttpPut]
         [Route("UpdateDealership")]
-        public async Task<ActionResult> UpdateDealership(int dealershipId, string name, string address, string zip, string state, string city, string phone, string email)
+        public async Task<ActionResult> UpdateDealership(int dealerId, string name, string address, string zip, string state, string city, string phone, string email)
         {
-            Dealership dealer = await _context.Dealerships.Where(d => d.DealerId == dealershipId).FirstOrDefaultAsync<Dealership>();
+            Dealership dealer = await _context.Dealerships.Where(d => d.DealerId == dealerId).FirstOrDefaultAsync<Dealership>();
 
             if (dealer != null)
             {
