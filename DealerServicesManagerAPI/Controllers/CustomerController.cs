@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DealerServicesManagerAPI.Controllers
 {
-    [Route("api/Employee")]
+    [Route("api/Customer")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
