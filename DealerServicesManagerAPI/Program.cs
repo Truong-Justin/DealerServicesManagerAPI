@@ -1,5 +1,6 @@
 ﻿global using DealerServicesManagerAPI.Models;
 global using Microsoft.EntityFrameworkCore;
+global using DealerServicesManagerAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DealerServicesDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("CONNECTION")));
+
+builder.Services.AddSingleton<ICustomerServicesRepository, CustomerServicesRepository>();
 
 var app = builder.Build();
 

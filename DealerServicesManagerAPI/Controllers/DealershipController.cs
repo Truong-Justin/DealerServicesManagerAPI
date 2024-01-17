@@ -23,10 +23,39 @@ namespace DealerServicesManagerAPI.Controllers
         [Route("GetAllDealerships")]
         public async Task<ActionResult> GetAllDealerships()
         {
-            return Ok(await _context.Dealerships
-                .Include(d => d.Employees)
-                .Include(d => d.Customers)
-                .ToListAsync());
+            return Ok(await _context.Dealerships.ToListAsync());
+        }
+
+        [HttpGet]
+        [Route("GetEmployeesForDealership")]
+        public async Task<ActionResult> GetEmployeesForDealership(int dealershipId)
+        {
+            var query = from a in _context.Dealerships
+                        join b in _context.Employees on a.DealerId equals b.DealerId
+                        where a.DealerId == dealershipId
+                        select new
+                        {
+                            FirstName = b.FirstName,
+                            LastName = b.LastName
+                        };
+
+            return Ok(await query.ToListAsync());
+        }
+
+        [HttpGet]
+        [Route("GetCustomersForDealership")]
+        public async Task<ActionResult> GetCustomersForDealership(int dealershipId)
+        {
+            var query = from a in _context.Dealerships
+                        join b in _context.Customers on a.DealerId equals b.DealerId
+                        where a.DealerId == dealershipId
+                        select new
+                        {
+                            FirstName = b.FirstName,
+                            LastName = b.LastName
+                        };
+
+            return Ok(await query.ToListAsync());
         }
 
         [HttpGet]
