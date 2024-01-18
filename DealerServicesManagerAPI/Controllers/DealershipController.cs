@@ -9,13 +9,15 @@ namespace DealerServicesManagerAPI.Controllers
     public class DealershipController : ControllerBase
     {
         private readonly DealerServicesDbContext _context;
+        private readonly IDealerServicesRepository _dealerServicesRepository;
 
         // DealerServicesDbContext is dependency injected into
         // class controller so the entire DealershipController
         // class can use DealerShipServicesDbContext methods.
-        public DealershipController(DealerServicesDbContext context)
+        public DealershipController(DealerServicesDbContext context, IDealerServicesRepository dealerServicesRepository)
         {
             _context = context;
+            _dealerServicesRepository = dealerServicesRepository;
         }
 
         // 
@@ -58,6 +60,13 @@ namespace DealerServicesManagerAPI.Controllers
                         };
 
             return Ok(await query.ToListAsync());
+        }
+
+        [HttpGet]
+        [Route("GetCustomerServicesForDealer")]
+        public async Task<ActionResult> GetCustomerServicesForDealer(int dealershipId)
+        {
+            return Ok(await _dealerServicesRepository.GetCustomerServicesForDealerAsync(dealershipId));
         }
 
         [HttpGet]

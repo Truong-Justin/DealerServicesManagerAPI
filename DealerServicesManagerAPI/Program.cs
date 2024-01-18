@@ -14,6 +14,7 @@ builder.Services.AddDbContext<DealerServicesDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("CONNECTION")));
 
 builder.Services.AddSingleton<ICustomerServicesRepository, CustomerServicesRepository>();
+builder.Services.AddSingleton<IDealerServicesRepository, DealerServicesRepository>();
 
 var app = builder.Build();
 
