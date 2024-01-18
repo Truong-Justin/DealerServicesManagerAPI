@@ -35,6 +35,7 @@ namespace DealerServicesManagerAPI.Controllers
                         where a.DealerId == dealershipId
                         select new
                         {
+                            EmployeeId = b.EmployeeId,
                             FirstName = b.FirstName,
                             LastName = b.LastName
                         };
@@ -51,6 +52,7 @@ namespace DealerServicesManagerAPI.Controllers
                         where a.DealerId == dealershipId
                         select new
                         {
+                            CustomerId = b.CustomerId,
                             FirstName = b.FirstName,
                             LastName = b.LastName
                         };
