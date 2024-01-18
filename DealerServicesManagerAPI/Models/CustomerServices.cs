@@ -2,6 +2,8 @@
 {
 	public class CustomerServices : CustomerService
 	{
+		public string DealerName { get; set; }
+
 		public string FirstName { get; set; }
 
 		public string LastName { get; set; }

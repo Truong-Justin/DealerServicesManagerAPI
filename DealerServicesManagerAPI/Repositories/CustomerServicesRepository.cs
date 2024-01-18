@@ -30,6 +30,7 @@ namespace DealerServicesManagerAPI.Repositories
 						{
 							CustomerServices customerService = new CustomerServices()
 							{
+								DealerName = (string)reader["DealerName"],
 								ServiceId = Convert.ToInt32(reader["ServiceId"]),
 								CustomerId = Convert.ToInt32(reader["CustomerId"]),
 								FirstName = (string)reader["FirstName"],
