@@ -22,6 +22,13 @@ namespace DealerServicesManagerAPI.Controllers
         {
             return Ok(await _customerServicesRepository.GetCustomerServicesAsync());
         }
+
+        [HttpGet]
+        [Route("GetCustomerServiceById")]
+        public async Task<ActionResult> GetCustomerById(int customerId, int serviceId)
+        {
+            return Ok(await _customerServicesRepository.GetCustomerServiceByIdsAsync(customerId, serviceId));
+        }
     }
 }
 

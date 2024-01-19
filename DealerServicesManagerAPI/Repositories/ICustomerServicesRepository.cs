@@ -1,11 +1,9 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DealerServicesManagerAPI.Repositories
+﻿namespace DealerServicesManagerAPI.Repositories
 {
 	public interface ICustomerServicesRepository
 	{
 		Task<IEnumerable<CustomerServices>> GetCustomerServicesAsync();
+		Task<CustomerServices> GetCustomerServiceByIdsAsync(int customerId, int serviceId);
 	}
 }
 
