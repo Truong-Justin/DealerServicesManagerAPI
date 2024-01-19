@@ -76,6 +76,7 @@ namespace DealerServicesManagerAPI.Repositories
 							customerService.ServiceName = (string)reader["ServiceName"];
 							customerService.LaborHours = Convert.ToInt32(reader["Labor_Hours"]);
 							customerService.Date = DateOnly.FromDateTime((DateTime)reader["Date"]);
+							customerService.IsComplete = (bool)reader["IsComplete"];
 						}
 					}
 				}
